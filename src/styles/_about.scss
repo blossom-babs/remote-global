@@ -75,8 +75,33 @@
 	&-footer {
 		@include fluidLayout();
 
-    &-form{
-      padding-top: 2rem;
-    }
+		&-form {
+			form {
+				padding-top: 2rem;
+				display: grid;
+				gap: 1rem;
+			}
+
+			input {
+				width: 50%;
+				padding: 0.5rem 1rem;
+				font-family: 'Nunito', sans-serif;
+        border: 1px solid #000;
+			}
+
+			button {
+				padding: 0.8rem 2rem;
+				background: #fff;
+				border: 1px solid #000;
+				cursor: pointer;
+				width: 50%;
+				transition: 1s ease-in-out;
+        font-family: 'Nunito', sans-serif;
+
+				&:hover {
+          background: #ddd;
+				}
+			}
+		}
 	}
 }

@@ -1,10 +1,33 @@
 import Link from 'next/link';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import {useState, useRef} from 'react'
+import { useState, useRef } from 'react';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const About = () => {
-	const formRef = useRef(null)
+	const formRef = useRef(null);
+	const [success, setSuccess] = useState(false);
+
+	const handleSubmit = (e: { preventDefault: () => void }) => {
+		e.preventDefault();
+		const formElement = document.querySelector('#form') as HTMLFormElement;
+		const formData = new FormData(formElement);
+
+		console.log(formData);
+
+		fetch(
+			'https://script.google.com/macros/s/AKfycbxAJjPI6YorvCvj_sWg-nK6gF0SYZjVWT5_-nmDrfNzPfoz6GYzAAf_74HqBWlldFHN/exec',
+			{
+				method: 'POST',
+				body: formData
+			}
+		)
+			.then((res) => {
+				console.log(res);
+				if (res.status === 200) setSuccess(true);
+			})
+			.catch((err) => console.log(err));
+	};
 
 	return (
 		<div className="about">
@@ -54,34 +77,40 @@ const About = () => {
 					hire global talents
 				</p>
 
-				<div className="about-footer-form">
-					<form method="post" ref={formRef} name="google-sheet" action="">
-						<div>
-							<TextField
-								id="firstName"
-								fullWidth
-								label="First Name"
-								variant="standard"
-								name="firstName"
-							/>
-						</div>
-						<div>
-							<TextField
-								id="email"
-								fullWidth
-								label="Your email"
-								variant="standard"
-								name="email"
-							/>
-						</div>
-						<Button style={{marginTop: '2rem', color: '#000', borderColor: '#000'}} variant="outlined">Join the Waitlist</Button>
-						{/* <input type="text" placeholder="First Name" />
-					<input type="email" placeholder="Enter Your email" /> 
-						<button type="submit">Join the Waitlist</button>*/}
-					</form>
-				</div>
-
+				{success ? (
+					<SuccessMessage />
+				) : (
+					<div className="about-footer-form">
+						<form onSubmit={handleSubmit} id="form" method="post" action="">
+							<div>
+								<input type="text" name="FirstName" placeholder="First Name" />
+							</div>
+							<div>
+								<input
+									type="email"
+									name="Email"
+									placeholder="Enter Your email"
+								/>
+							</div>
+							<div>
+								<button type="submit">Join the Waitlist</button>
+							</div>
+						</form>
+					</div>
+				)}
 			</div>
+		</div>
+	);
+};
+
+export const SuccessMessage = () => {
+	return (
+		<div>
+			<div>
+				<CheckCircleIcon />
+			</div>
+			<h1>Success!</h1>
+			<p>You will be the first to be notified of global opportunities.</p>
 		</div>
 	);
 };

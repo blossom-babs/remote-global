@@ -5,13 +5,24 @@
 }
 
 .nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 120px;
 	position: fixed;
 	top: 0;
-	width: 90%;
+	width: 100%;
+	height: 120px;
+
+	&-ctn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 2rem;
+		width: 90%;
+	}
+
+	&-scrollBg {
+		background-color: #000;
+		//background: radial-gradient(black, transparent);
+		color: #fff
+	}
 
 	&-logo {
 		@include flexlayout;
@@ -21,6 +32,10 @@
 			font-family: 'Damion', cursive;
 			font-size: 28px;
 			color: #000;
+
+			&.scroll{
+				color: #fff;
+			}
 		}
 	}
 

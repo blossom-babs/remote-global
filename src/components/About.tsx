@@ -3,23 +3,25 @@ import Link from 'next/link';
 const  About = () =>{
 	return (
 		<div className="about">
-			<h1 className='about-main'>
+			<div className="about-main">
+			<h1 className=''>
 				Connecting African Talents to International opportunities  hiring
 				globally.
 			</h1>
+			</div>
 
-			<div>
+			<div className='about-whatWeDo'>
 				<h2>❌ What this is not ❌</h2>
 
-				<div>
-					<div>
+				<div className='about-whatWeDo-box'>
+					<div className='about-whatWeDo-card'>
 						<h3>Not An Agency</h3>
 						<p>
 							This is not an Agency for recruiting talents to jobs or companies.
 							We have no affiliations to the companies shared.
 						</p>
 					</div>
-					<div>
+					<div className='about-whatWeDo-card'>
 						<h3>Not A Job board</h3>
 						<p>
 							This website contains little information about whether the

@@ -1,14 +1,16 @@
+import Link from 'next/link';
+
 const Navbar = () => {
 	return (
-		<div>
+		<div className="nav">
 			<div className="nav-logo">
-				<a href="">Re</a>
+				<Link href="/" className='nav-logo-link'>Re</Link>
 				<h1>Remote Global</h1>
 			</div>
 
-			<div>
-				<button>Submit</button>
-				<button>Sign in</button>
+			<div className='nav-action'>
+				<Link href="/pitch">Pitch a Global Company</Link>
+				<Link href="/sign-in" className="nav-action-signin">Sign in</Link>
 			</div>
 		</div>
 	);

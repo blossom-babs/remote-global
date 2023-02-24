@@ -1,0 +1,42 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    width: 90%;
+
+	&-logo {
+		@extend %flexlayout;
+
+		&-link {
+			text-decoration: none;
+			font-family: 'Damion', cursive;
+			font-size: 28px;
+			color: #000;
+		}
+	}
+
+	&-action {
+		@extend %flexlayout;
+
+		a {
+			text-decoration: none;
+			color: #000;
+      cursor: pointer;
+		}
+
+		&-signin {
+			border: 1px solid #000;
+			border-radius: 50px;
+			padding: 0.5rem 1rem;
+		}
+	}
+}
+
+%flexlayout {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}

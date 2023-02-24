@@ -9,21 +9,26 @@ const About = () => {
 	const [error, setError] = useState(false);
 	const [loading, setLoading] = useState(false);
 
+	const clickSubmit = () => {
+		setError(false);
+		setLoading(true);
+	};
+
 	const handleSubmit = (e: { preventDefault: () => void }) => {
 		e.preventDefault();
 		const formElement = document.querySelector('#form') as HTMLFormElement;
 		const formData = new FormData(formElement);
-
-		fetch(
-			'https://script.google.com/macros/s/AKfycbxAJjPI6YorvCvj_sWg-nK6gF0SYZjVWT5_-nmDrfNzPfoz6GYzAAf_74HqBWlldFHN/exec',
-			{
-				method: 'POST',
-				body: formData
-			}
-		)
+		fetch(process.env.NEXT_PUBLIC_FORM_URL as string, {
+			method: 'POST',
+			body: formData
+		})
 			.then((res) => {
 				console.log(res);
 				if (res.status === 200) setSuccess(true);
+				if (res.status === 404) {
+					setError(true);
+					setLoading(false);
+				}
 			})
 			.catch((err) => {
 				console.log(err);
@@ -107,12 +112,12 @@ const About = () => {
 								/>
 							</div>
 							<div>
-								<button onClick={() => setLoading(true)} type="submit">
+								<button onClick={clickSubmit} type="submit">
 									Join the Waitlist
 								</button>
 							</div>
 						</form>
-						{loading && <CircularProgress disableShrink color='inherit' />}
+						{loading && <CircularProgress disableShrink color="inherit" />}
 						{error && (
 							<p style={{ color: 'red' }}>
 								Error Submitting Form! Please try again.

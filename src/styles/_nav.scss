@@ -8,7 +8,7 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-	padding: 2rem 0;
+	//padding: 2rem 0;
 	transition: 1s ease;
 
 	&-ctn {
@@ -38,6 +38,13 @@
 				color: #fff;
 			}
 		}
+
+		&-companies{
+			text-decoration: none;
+			color: #000;
+			cursor: pointer;
+			padding-top: 1rem;
+		}
 	}
 
 	&-action {
@@ -58,6 +65,12 @@
 			border: 1px solid #000;
 			border-radius: 50px;
 			padding: 0.5rem 1rem;
+			
+			&.scrollColor{
+				border: 1px solid #fff;
+				color: #fff;
+
+			}
 		}
 	}
 

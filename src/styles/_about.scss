@@ -1,3 +1,10 @@
+@mixin fluidLayout {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	height: 100vh;
+}
+
 .about {
 	display: flex;
 	justify-content: center;
@@ -27,19 +34,18 @@
 		width: 90%;
 		text-align: center;
 
-  
-    @media screen and (min-width:1440px){
-      width: 50%;
-    }
+		@media screen and (min-width: 1440px) {
+			width: 50%;
+		}
 
 		&-box {
 			padding-top: 2rem;
 			display: grid;
 			gap: 2rem;
 
-      @media screen and (min-width:768px){
-        grid-template-columns: 1fr 1fr;
-      }
+			@media screen and (min-width: 768px) {
+				grid-template-columns: 1fr 1fr;
+			}
 		}
 
 		&-card {
@@ -47,11 +53,30 @@
 			padding: 1rem;
 			text-align: center;
 
-      p{
-        padding-top: 1rem;
-      }
+			p {
+				padding-top: 1rem;
+			}
 		}
 	}
+
+	&-why {
+		@include fluidLayout();
+
+		&-pitch {
+			padding-top: 2rem;
+
+			a {
+				color: #000;
+				font-weight: bold;
+			}
+		}
+	}
+
+	&-footer {
+		@include fluidLayout();
+
+    &-form{
+      padding-top: 2rem;
+    }
+	}
 }
-
-

@@ -1,14 +1,20 @@
+@mixin flexlayout {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 120px;
-    position: fixed;
-    top: 0;
-    width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 120px;
+	position: fixed;
+	top: 0;
+	width: 90%;
 
 	&-logo {
-		@extend %flexlayout;
+		@include flexlayout;
 
 		&-link {
 			text-decoration: none;
@@ -19,12 +25,17 @@
 	}
 
 	&-action {
-		@extend %flexlayout;
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
 
+		@media screen and (min-width: 768px) {
+			@include flexlayout;
+		}
 		a {
 			text-decoration: none;
 			color: #000;
-      cursor: pointer;
+			cursor: pointer;
 		}
 
 		&-signin {
@@ -33,10 +44,58 @@
 			padding: 0.5rem 1rem;
 		}
 	}
-}
 
-%flexlayout {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
+	&-mobile {
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
+
+		&-links {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			height: 50vh;
+			right: 0;
+			top: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// transition
+			transition: transform ease-in-out 1s;
+			transform-origin: right;
+			transition-delay: 0.1s;
+
+			&.hide {
+				transform: translateY(-110%);
+				left: 0;
+				bottom: 0;
+			}
+
+			ul {
+				display: flex;
+				justify-content: space-between;
+				flex-flow: column;
+				height: 50%;
+				list-style: none;
+				align-items: center;
+			}
+
+			a {
+				color: #fff;
+				text-decoration: none;
+				cursor: pointer;
+				list-style-type: none;
+
+				&:hover {
+					color: #9c5a5a;
+				}
+			}
+		}
+
+		&-close {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+		}
+	}
 }

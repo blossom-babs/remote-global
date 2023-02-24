@@ -19,7 +19,7 @@
 		justify-content: center;
 
 		h1 {
-			@media screen and (min-width: 768px) {
+			@media screen and (min-width: 600px) {
 				width: 70%;
 			}
 
@@ -62,12 +62,13 @@
 	&-why {
 		@include fluidLayout();
 
-		&-pitch {
-			padding-top: 2rem;
+		h3 {
+			padding: 2rem;
+		}
 
+		&-pitch {
 			a {
 				color: #000;
-				font-weight: bold;
 			}
 		}
 	}
@@ -86,7 +87,7 @@
 				width: 50%;
 				padding: 0.5rem 1rem;
 				font-family: 'Nunito', sans-serif;
-        border: 1px solid #000;
+				border: 1px solid #000;
 			}
 
 			button {
@@ -96,12 +97,21 @@
 				cursor: pointer;
 				width: 50%;
 				transition: 1s ease-in-out;
-        font-family: 'Nunito', sans-serif;
+				font-family: 'Nunito', sans-serif;
 
 				&:hover {
-          background: #ddd;
+					background: #ddd;
 				}
 			}
+		}
+	}
+
+	&-success {
+		margin-top: 2rem;
+
+		@media screen and (min-width: 700px) {
+			width: 70%;
+			margin: 2rem auto;
 		}
 	}
 }

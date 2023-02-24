@@ -2,9 +2,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ReportIcon from '@mui/icons-material/Report';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const About = () => {
 	const [success, setSuccess] = useState(false);
+	const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = (e: { preventDefault: () => void }) => {
 		e.preventDefault();
@@ -22,7 +25,10 @@ const About = () => {
 				console.log(res);
 				if (res.status === 200) setSuccess(true);
 			})
-			.catch((err) => console.log(err));
+			.catch((err) => {
+				console.log(err);
+				if (err) setError(true);
+			});
 	};
 
 	return (
@@ -85,19 +91,33 @@ const About = () => {
 					<div className="about-footer-form">
 						<form onSubmit={handleSubmit} id="form" method="post" action="">
 							<div>
-								<input type="text" name="FirstName" placeholder="First Name" />
+								<input
+									onChange={() => setError(false)}
+									type="text"
+									name="FirstName"
+									placeholder="First Name"
+								/>
 							</div>
 							<div>
 								<input
+									onChange={() => setError(false)}
 									type="email"
 									name="Email"
 									placeholder="Enter Your email"
 								/>
 							</div>
 							<div>
-								<button type="submit">Join the Waitlist</button>
+								<button onClick={() => setLoading(true)} type="submit">
+									Join the Waitlist
+								</button>
 							</div>
 						</form>
+						{loading && <CircularProgress disableShrink color='inherit' />}
+						{error && (
+							<p style={{ color: 'red' }}>
+								Error Submitting Form! Please try again.
+							</p>
+						)}
 					</div>
 				)}
 			</div>

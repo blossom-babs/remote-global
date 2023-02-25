@@ -2,6 +2,7 @@ import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Dispatch, SetStateAction, useState, useEffect } from 'react';
 import CancelIcon from '@mui/icons-material/Cancel';
+import Image from 'next/image';
 
 interface Props {
 	expand: boolean;
@@ -32,17 +33,29 @@ const Navbar = () => {
 		<div className={scroll ? 'nav nav-scrollBg' : 'nav'}>
 			<div className="nav-ctn">
 				<div className="nav-logo">
-					<Link
-						href="/"
-						className={scroll ? 'nav-logo-link scroll' : 'nav-logo-link'}>
-						Re
+					<Link href="/">
+					{scroll ? (
+						<Image
+							src="/logo-white.png"
+							alt="Remote Global"
+							width={100}
+							height={100}
+						/>
+					) : (
+						<Image
+							src="/logo-black.png"
+							alt="Remote Global"
+							width={100}
+							height={100}
+						/>
+					)}
 					</Link>
-					<h1>Remote Global</h1>
+					<Link style={{color: scroll ? '#fff' : '#000'}} className='nav-logo-companies' href="/companies">List</Link>
 				</div>
 
 				<div className="nav-action">
-					<Link href="/pitch">Pitch a Global Company</Link>
-					<Link href="/sign-in" className="nav-action-signin">
+					<Link style={{color: scroll ? '#fff' : '#000'}}  href="/pitch">Pitch a Global Company</Link>
+					<Link href="/sign-in" className={`nav-action-signin ${scroll && 'scrollColor'}`}>
 						Sign in
 					</Link>
 				</div>

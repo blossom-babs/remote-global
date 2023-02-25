@@ -9,7 +9,7 @@ const Layout = ({ children }: Props) => {
 	return (
 		<>
 			<Navbar />
-			<main>{children}</main>
+			<div>{children}</div>
 		</>
 	);
 };

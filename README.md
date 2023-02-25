@@ -10,11 +10,12 @@ A platform to display and track international companies hiring worldwide. A user
 ## This project is bootstrapped with Fullstack Nextjs:
 
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Nextjs](https://img.shields.io/badge/-Nextjs-black?style=for-the-badge&logo=next&logoColor=white)
+![Nextjs](https://img.shields.io/badge/-Nextjs-black?style=for-the-badge&logo=nextjs&logoColor=white)
 ![Eslint](https://img.shields.io/badge/-eslint-brightgreen?style=for-the-badge&logo=eslint&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/-postgresql-red?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Cypress](https://img.shields.io/badge/-cypress-brown?style=for-the-badge&logo=cypress&logoColor=white)
 ![Prisma](https://img.shields.io/badge/-prisma-purple?style=for-the-badge&logo=prisma&logoColor=white)
+![Vercel](https://img.shields.io/badge/-vercel-black?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## Play with this code locally:
 1. You need node installed globally on your local machine

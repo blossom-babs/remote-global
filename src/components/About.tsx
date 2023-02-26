@@ -50,7 +50,9 @@ const About = () => {
 				</p>
 			</div>
 
-			<Waitlist />
+			<div className="about-footer">
+				<Waitlist />
+			</div>
 		</div>
 	);
 };

@@ -14,7 +14,9 @@ export default function Companies() {
 			<>
 				<Layout>
 					<main className="companies">
+            <div className="companies-waitlist">
 						<Waitlist />
+            </div>
 					</main>
 				</Layout>
 			</>

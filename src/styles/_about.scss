@@ -84,20 +84,27 @@
 			}
 
 			input {
-				width: 50%;
 				padding: 0.5rem 1rem;
 				font-family: 'Nunito', sans-serif;
 				border: 1px solid #000;
+
+				@media screen and (min-width: 600px) {
+					width: 50%;
+				}
 			}
 
 			button {
-				padding: 0.8rem 2rem;
+				padding: 0.8rem 1rem;
 				background: #fff;
 				border: 1px solid #000;
 				cursor: pointer;
 				width: 50%;
 				transition: 1s ease-in-out;
 				font-family: 'Nunito', sans-serif;
+
+				@media screen and (min-width: 600px) {
+					padding: 0.8rem 2rem;
+				}
 
 				&:hover {
 					background: #ddd;

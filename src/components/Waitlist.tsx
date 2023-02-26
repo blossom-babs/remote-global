@@ -36,7 +36,7 @@ const Waitlist = () => {
 	};
 
 	return (
-		<div id="join-the-waitlist" className="about-footer">
+		<div id="join-the-waitlist" className="">
 			<h2>Stay in touch...</h2>
 			<p>
 				Be the first to get updates about international companies looking to

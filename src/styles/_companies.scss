@@ -16,5 +16,20 @@
 		justify-content: space-around;
 		align-items: center;
 		padding: 120px 0 5rem 0;
+
+		@media screen and (max-width:500px) {
+			display: none;
+		}
+	}
+
+	&-viewIcons{
+		display: flex;
+		gap: 1rem;
+
+		svg{
+			color: grey;
+			cursor: pointer;
+			font-size: 2rem;
+		}
 	}
 }

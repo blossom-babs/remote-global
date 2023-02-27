@@ -13,23 +13,23 @@ export default function Companies() {
 			<Head>
 				<title>International Companies hiring globally</title>
 			</Head>
-			<>
+			<main className="companies">
 				<Layout>
-					<main className="companies">
-						<div className="companies-waitlist">
-							<header className='companies-header'>
+					<div className="companies-content">
+						<header className="companies-header">
+							<div className="companies-header-filter">
 								<MultipleSelectChip />
+							</div>
 
-								<div>
-<GridViewIcon/>
-									<TableRowsIcon/>
-								</div>
-							</header>
-							<Waitlist />
-						</div>
-					</main>
+							<div className="companies-viewIcons">
+								<GridViewIcon />
+								<TableRowsIcon />
+							</div>
+						</header>
+						<Waitlist />
+					</div>
 				</Layout>
-			</>
+			</main>
 		</>
 	);
 }

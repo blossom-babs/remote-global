@@ -10,4 +10,11 @@
 		text-align: center;
 		//height: 100vh;
 	}
+
+	&-header{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding: 120px 0 5rem 0;
+	}
 }

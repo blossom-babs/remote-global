@@ -16,9 +16,9 @@
 		justify-content: space-around;
 		align-items: center;
 		padding: 120px 0 5rem 0;
+		display: none;
 
 		@media screen and (max-width:500px) {
-			display: none;
 		}
 	}
 

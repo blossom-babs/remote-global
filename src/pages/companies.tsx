@@ -16,17 +16,21 @@ export default function Companies() {
 			<main className="companies">
 				<Layout>
 					<div className="companies-content">
-						<header className="companies-header">
-							<div className="companies-header-filter">
-								<MultipleSelectChip />
-							</div>
+						<div className="">
+							<header className="companies-header">
+								<div className="companies-header-filter">
+									<MultipleSelectChip />
+								</div>
 
-							<div className="companies-viewIcons">
-								<GridViewIcon />
-								<TableRowsIcon />
+								<div className="companies-viewIcons">
+									<GridViewIcon />
+									<TableRowsIcon />
+								</div>
+							</header>
+							<div className="companies-waitlist">
+								<Waitlist />
 							</div>
-						</header>
-						<Waitlist />
+						</div>
 					</div>
 				</Layout>
 			</main>

@@ -6,22 +6,20 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Company {
   id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
   companyName String   @db.VarChar(255)
-  website     String
-  approved    Boolean  @default(true)
   industry    String?
-  companySize String
+  about       String?
+  companySize String?
+  socialLinks String[]
+  approved    Boolean  @default(true)
   location    String
-  authorId    Int
 }
 
-// pending
-// - supports visa(boolean) - currently hiring(boolean)
+// run migrations - npx prisma migrate dev --name init

@@ -11,15 +11,17 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+
+
 model Company {
-  id          Int      @id @default(autoincrement())
-  companyName String   @db.VarChar(255)
+  id          Int     @id @default(autoincrement())
+  companyName String  @db.VarChar(255)
   industry    String?
   about       String?
   companySize String?
-  socialLinks String[]
-  approved    Boolean  @default(true)
+  approved    Boolean @default(true)
   location    String
+  socialLinks String[]
 }
 
 // run migrations - npx prisma migrate dev --name init

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import TableRowsIcon from '@mui/icons-material/TableRows';
 import GridViewIcon from '@mui/icons-material/GridView';
+import React from 'react';
 export default function Companies() {
 	// 2 kind of views - grid and list
 	return (

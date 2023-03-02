@@ -2,21 +2,30 @@ import { Prisma, PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+const json = [
+	{
+		twitter: 'https://twitter.com/10up',
+		linkedin: 'https://www.linkedin.com/company/10up/',
+		github: 'https://github.com/10up',
+		facebook: 'https://web.facebook.com/10up.agency?_rdc=1&_rdr'
+	}
+] as Prisma.JsonArray;
+
 async function main() {
 	await prisma.company.create({
 		data: {
 			companyName: '10up',
 			industry: 'Industry & Web services',
+			website: 'https://10up.com/',
 			about:
 				'We make the web better by finely crafting websites & tools for content creators.',
 			companySize: '201 - 500',
-			socialLinks: ['https://twitter.com/10up' ],
+			socialLinks: json,
 			approved: true,
 			location: 'Roseville, CA'
 		}
 	});
 
-	// https://twitter.com/10up
 
 	const allUsers = await prisma.company.findMany();
 	console.log(allUsers);

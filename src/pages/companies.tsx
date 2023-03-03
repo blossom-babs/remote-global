@@ -52,7 +52,7 @@ export default function Companies({ data }: any) {
 									<div className="companies-list-header">
 										{/* company logo */}
 										<h1>{item.companyName}</h1>
-										<Link href={item.website}>
+										<Link target="_blank" rel="noopener noreferrer" href={item.website}>
 											<OpenInNewIcon />
 										</Link>
 									</div>

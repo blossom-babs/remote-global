@@ -12,23 +12,14 @@ datasource db {
 }
 
 model Company {
-  id          String  @id @default(uuid())
-  companyName String  @db.VarChar(255)
-  website     String
-  industry    String?
-  about       String?
-  companySize String?
-  approved    Boolean @default(true)
-  location    String
-  socialLinks Json
+  id             String   @id @default(uuid())
+  companyName    String   @db.VarChar(255)
+  employmentType String[]
+  website        String
+  industry       String?
+  about          String?
+  companySize    String?
+  approved       Boolean  @default(true)
+  location       String
+  socialLinks    Json
 }
-
-// model Social {
-//   id        String   @id @default(uuid())
-//   name      String
-//   link      String
-//   Company   Company? @relation(fields: [companyId], references: [id])
-//   companyId String?
-// }
-
-// run migrations - npx prisma migrate dev --name init

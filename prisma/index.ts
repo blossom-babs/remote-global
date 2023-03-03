@@ -15,6 +15,7 @@ async function main() {
 	// await prisma.company.create({
 	// 	data: {
 	// 		companyName: '10up',
+	// 		employmentType: ['full-time', 'part-time'],
 	// 		industry: 'Industry & Web services',
 	// 		website: 'https://10up.com/',
 	// 		about:
@@ -25,7 +26,6 @@ async function main() {
 	// 		location: 'Roseville, CA'
 	// 	}
 	// });
-
 
 	const allUsers = await prisma.company.findMany();
 	console.log(allUsers);

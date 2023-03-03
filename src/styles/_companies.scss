@@ -11,25 +11,42 @@
 		//height: 100vh;
 	}
 
-	&-header{
+	&-header {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		padding: 120px 0 5rem 0;
 		display: none;
 
-		@media screen and (max-width:500px) {
+		@media screen and (max-width: 500px) {
 		}
 	}
 
-	&-viewIcons{
+	&-viewIcons {
 		display: flex;
 		gap: 1rem;
 
-		svg{
+		svg {
 			color: grey;
 			cursor: pointer;
 			font-size: 2rem;
 		}
+	}
+
+	&-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		article {
+			background: #eee;
+		}
+	}
+
+	&-content {
+		width: 90%;
+		margin: 0 auto;
+		height: 100vh;
+		padding-top: 120px;
 	}
 }

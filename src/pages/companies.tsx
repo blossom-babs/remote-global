@@ -7,8 +7,27 @@ import { useState } from 'react';
 import TableRowsIcon from '@mui/icons-material/TableRows';
 import GridViewIcon from '@mui/icons-material/GridView';
 import React from 'react';
-export default function Companies() {
-	// 2 kind of views - grid and list
+import { PrismaClient } from '@prisma/client';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+
+const prisma = new PrismaClient();
+// 2 kind of views - grid and list
+
+type companyType = {
+	id: string;
+	companyName: string;
+	employmentType: [];
+	website: string;
+	industry: string;
+	about: string;
+	companySize: string;
+	approved: boolean;
+	location: string;
+	socialLinks: [];
+};
+
+export default function Companies({ data }: any) {
+	console.log(data);
 	return (
 		<>
 			<Head>
@@ -17,24 +36,46 @@ export default function Companies() {
 			<main className="companies">
 				<Layout>
 					<div className="companies-content">
-						<div className="">
-							<header className="companies-header">
-								<div className="companies-header-filter">
-									<MultipleSelectChip />
-								</div>
-
-								<div className="companies-viewIcons">
-									<GridViewIcon />
-									<TableRowsIcon />
-								</div>
-							</header>
-							<div className="companies-waitlist">
-								<Waitlist />
+						<header className="companies-header">
+							<div className="companies-header-filter">
+								<MultipleSelectChip />
 							</div>
+
+							<div className="companies-viewIcons">
+								<GridViewIcon />
+								<TableRowsIcon />
+							</div>
+						</header>
+						<div className="companies-list">
+							{data.map((item: any) => (
+								<article key={item.id}>
+									<div className="companies-list-header">
+										{/* company logo */}
+										<h1>{item.companyName}</h1>
+										<Link href={item.website}>
+											<OpenInNewIcon />
+										</Link>
+									</div>
+									<p>{item.about}</p>
+								</article>
+							))}
+						</div>
+						<div className="companies-waitlist">
+							<Waitlist />
 						</div>
 					</div>
 				</Layout>
 			</main>
 		</>
 	);
+}
+
+export async function getServerSideProps() {
+	const companies = await prisma.company.findMany();
+
+	return {
+		props: {
+			data: companies
+		}
+	};
 }

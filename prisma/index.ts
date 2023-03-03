@@ -27,8 +27,8 @@ async function main() {
 	// 	}
 	// });
 
-	const allUsers = await prisma.company.findMany();
-	console.log(allUsers);
+	const allComp = await prisma.company.findMany();
+	console.log(allComp);
 }
 
 main()

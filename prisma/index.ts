@@ -2,30 +2,21 @@ import { Prisma, PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const json = [
-	{
-		twitter: 'https://twitter.com/10up',
-		linkedin: 'https://www.linkedin.com/company/10up/',
-		github: 'https://github.com/10up',
-		facebook: 'https://web.facebook.com/10up.agency?_rdc=1&_rdr'
-	}
-] as Prisma.JsonArray;
+
 
 async function main() {
-	// await prisma.company.create({
-	// 	data: {
-	// 		companyName: '10up',
-	// 		employmentType: ['full-time', 'part-time'],
-	// 		industry: 'Industry & Web services',
-	// 		website: 'https://10up.com/',
-	// 		about:
-	// 			'We make the web better by finely crafting websites & tools for content creators.',
-	// 		companySize: '201 - 500',
-	// 		socialLinks: json,
-	// 		approved: true,
-	// 		location: 'Roseville, CA'
-	// 	}
-	// });
+	await prisma.company.create({
+		data: {
+			companyName: '10up',
+			companyLogo: 'https://media.glassdoor.com/sql/775906/10up-squarelogo-1400949368497.png',
+			website: 'https://10up.com/',
+			about:
+				'We make the web better by finely crafting websites & tools for content creators.',
+			companySize: '201 - 500',
+			approved: true,
+			location: 'Roseville, CA'
+		}
+	});
 
 	const allComp = await prisma.company.findMany();
 	console.log(allComp);

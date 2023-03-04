@@ -12,14 +12,12 @@ datasource db {
 }
 
 model Company {
-  id             String   @id @default(uuid())
-  companyName    String   @db.VarChar(255)
-  employmentType String[]
-  website        String
-  industry       String?
-  about          String?
-  companySize    String?
-  approved       Boolean  @default(true)
-  location       String
-  socialLinks    Json
+  id          String  @id @default(uuid())
+  companyName String  @db.VarChar(255)
+  companyLogo String
+  website     String
+  about       String?
+  companySize String?
+  approved    Boolean @default(true)
+  location    String
 }

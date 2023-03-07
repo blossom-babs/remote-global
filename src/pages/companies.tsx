@@ -18,22 +18,20 @@ const prisma = new PrismaClient();
 
 */
 
+interface Companies {
+	companies: {
+		id: string;
+		companyName: string;
+		companyLogo: string;
+		website: string;
+		about: string;
+		companySize: string;
+		approved: boolean;
+		location: string;
+	}[];
+}
 
-type companyType = {
-	id: string;
-	companyName: string;
-	employmentType: [];
-	website: string;
-	industry: string;
-	about: string;
-	companySize: string;
-	approved: boolean;
-	location: string;
-	socialLinks: [];
-};
-
-export default function Companies({ data }: any) {
-	console.log(data);
+export default function Companies({ companies }: Companies) {
 	return (
 		<>
 			<Head>
@@ -53,7 +51,11 @@ export default function Companies({ data }: any) {
 							</div>
 						</header>
 						<div className="companies-list">
-							
+							{companies.map((data) => (
+								<article key={data.id}>
+									<h1>{data.companyName}</h1>
+								</article>
+							))}
 						</div>
 						<div className="companies-waitlist">
 							<Waitlist />
@@ -66,11 +68,11 @@ export default function Companies({ data }: any) {
 }
 
 export async function getServerSideProps() {
-	const companies = await prisma.company.findMany();
+	const companies = await prisma.company.findMany({});
 
 	return {
 		props: {
-			data: companies
+			companies: JSON.parse(JSON.stringify(companies))
 		}
 	};
 }

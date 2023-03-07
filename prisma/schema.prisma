@@ -12,12 +12,14 @@ datasource db {
 }
 
 model Company {
-  id          String  @id @default(uuid())
-  companyName String  @db.VarChar(255)
+  id          String   @id @default(uuid())
+  companyName String   @db.VarChar(255)
   companyLogo String
   website     String
   about       String?
   companySize String?
-  approved    Boolean @default(true)
+  approved    Boolean  @default(true)
   location    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

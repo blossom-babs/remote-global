@@ -13,7 +13,6 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 const prisma = new PrismaClient();
 
 /*
-
 1. filter by companysize, accepts open source
 2. companies list has 2 views - grid and table
 
@@ -54,18 +53,7 @@ export default function Companies({ data }: any) {
 							</div>
 						</header>
 						<div className="companies-list">
-							{data.map((item: any) => (
-								<article key={item.id}>
-									<div className="companies-list-header">
-										{/* company logo */}
-										<h1>{item.companyName}</h1>
-										<Link target="_blank" rel="noopener noreferrer" href={item.website}>
-											<OpenInNewIcon />
-										</Link>
-									</div>
-									<p>{item.about}</p>
-								</article>
-							))}
+							
 						</div>
 						<div className="companies-waitlist">
 							<Waitlist />

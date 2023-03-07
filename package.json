@@ -8,7 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "prisma": "npx ts-node --esm ./prisma/index.ts",
-    "migrate": "npx prisma migrate dev --name init"
+    "migrate": "npx prisma migrate dev --name init",
+    "db-push": "npx prisma db push",
+    "prisma-ui": "npx prisma  studio"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -16,7 +21,6 @@
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
     "@prisma/client": "^4.11.0",
-    "@types/node": "18.14.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "eslint": "8.34.0",
@@ -24,11 +28,14 @@
     "next": "13.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "^0.31.3",
-    "typescript": "4.9.5"
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
+    "@types/node": "^18.14.6",
     "prisma": "^4.11.0",
-    "sass": "^1.58.3"
+    "sass": "^1.58.3",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5"
   }
 }

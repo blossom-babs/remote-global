@@ -11,7 +11,14 @@ import { PrismaClient } from '@prisma/client';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 const prisma = new PrismaClient();
-// 2 kind of views - grid and list
+
+/*
+
+1. filter by companysize, accepts open source
+2. companies list has 2 views - grid and table
+
+*/
+
 
 type companyType = {
 	id: string;

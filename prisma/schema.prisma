@@ -15,7 +15,7 @@ model Company {
   id          String   @id @default(uuid())
   companyName String   @db.VarChar(255)
   companyLogo String
-  website     String
+  website     String   @unique
   about       String?
   companySize String?
   approved    Boolean  @default(true)

@@ -13,7 +13,7 @@ export const companies = [
 		companyName: 'Airbyte',
 		companyLogo:
 			'https://media.glassdoor.com/sql/7651014/airbyte-ca-squarelogo-1663228063571.png',
-		website: 'https://www.aha.io/',
+		website: 'https://www.airbyte.com/',
 		about:
 			'Airbyte is an open-source data integration engine that helps you consolidate your data in your data warehouses, lakes and databases.',
 		companySize: '51 - 200',

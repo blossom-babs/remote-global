@@ -1,14 +1,12 @@
 .companies {
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
 	&-waitlist {
 		width: 90%;
 		margin: 0 auto;
 		text-align: center;
-		//height: 100vh;
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&-header {
@@ -39,7 +37,7 @@
 		align-items: center;
 		//  justify-content: center;
 		text-align: center;
-		margin-bottom: 2rem;
+		margin-bottom: 5rem;
 
 		&-about {
 			padding: 1rem 0;
@@ -78,6 +76,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
+		min-height: 100vh;
 
 		article {
 			padding: 0.5rem 1rem;
@@ -100,7 +99,6 @@
 	&-content {
 		width: 90%;
 		margin: 0 auto;
-		height: 100vh;
 		padding-top: 120px;
 	}
 }

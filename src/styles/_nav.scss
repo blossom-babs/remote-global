@@ -10,6 +10,7 @@
 	width: 100%;
 	//padding: 2rem 0;
 	transition: 1s ease;
+	z-index: 1;
 
 	&-ctn {
 		display: flex;
@@ -37,6 +38,7 @@
 			&.scroll{
 				color: #fff;
 			}
+
 		}
 
 		&-companies{
@@ -44,6 +46,10 @@
 			color: #000;
 			cursor: pointer;
 			padding-top: 1rem;
+
+			&:hover{
+				text-decoration: underline ;
+			}
 		}
 	}
 
@@ -59,12 +65,21 @@
 			text-decoration: none;
 			color: #000;
 			cursor: pointer;
+
+			&:first-child:hover{
+				text-decoration: underline;
+			}
 		}
 
 		&-signin {
 			border: 1px solid #000;
 			border-radius: 50px;
 			padding: 0.5rem 1rem;
+
+			&:hover{
+				transition: all 1s ease;
+				background: yellowgreen;
+			}
 			
 			&.scrollColor{
 				border: 1px solid #fff;

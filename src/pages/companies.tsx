@@ -40,16 +40,6 @@ export default function Companies({ companies }: Companies) {
 			<main className="companies">
 				<Layout>
 					<div className="companies-content">
-						<header className="companies-header">
-							<div className="companies-header-filter">
-								<MultipleSelectChip />
-							</div>
-
-							<div className="companies-viewIcons">
-								<GridViewIcon />
-								<TableRowsIcon />
-							</div>
-						</header>
 						<div className="companies-list">
 							{companies.map((data) => (
 								<article key={data.id}>
@@ -61,9 +51,9 @@ export default function Companies({ companies }: Companies) {
 									/>
 									<div className="companies-data">
 										<h1>{data.companyName}</h1>
-										<p className='companies-data-about'>{data.about}</p>
+										<p className="companies-data-about">{data.about}</p>
 
-										<p className='companies-data-size'>
+										<p className="companies-data-size">
 											Company Size: <span>{data.companySize}</span>{' '}
 										</p>
 									</div>

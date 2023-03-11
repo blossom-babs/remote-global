@@ -34,28 +34,37 @@ const Navbar = () => {
 			<div className="nav-ctn">
 				<div className="nav-logo">
 					<Link href="/">
-					{scroll ? (
-						<Image
-							src="/logo-white.png"
-							alt="Remote Global"
-							width={100}
-							height={100}
-						/>
-					) : (
-						<Image
-							src="/logo-black.png"
-							alt="Remote Global"
-							width={100}
-							height={100}
-						/>
-					)}
+						{scroll ? (
+							<Image
+								src="/logo-white.png"
+								alt="Remote Global"
+								width={100}
+								height={100}
+							/>
+						) : (
+							<Image
+								src="/logo-black.png"
+								alt="Remote Global"
+								width={100}
+								height={100}
+							/>
+						)}
 					</Link>
-					<Link style={{color: scroll ? '#fff' : '#000'}} className='nav-logo-companies' href="/companies">List</Link>
+					<Link
+						style={{ color: scroll ? '#fff' : '#000' }}
+						className="nav-logo-companies"
+						href="/companies">
+						List
+					</Link>
 				</div>
 
 				<div className="nav-action">
-					<Link style={{color: scroll ? '#fff' : '#000'}}  href="/pitch">Pitch a Global Company</Link>
-					<Link href="/sign-in" className={`nav-action-signin ${scroll && 'scrollColor'}`}>
+					<Link style={{ color: scroll ? '#fff' : '#000' }} href="/pitch">
+						Pitch a Global Company
+					</Link>
+					<Link
+						href="/sign-in"
+						className={`nav-action-signin ${scroll && 'scrollColor'}`}>
 						Sign in
 					</Link>
 				</div>

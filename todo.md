@@ -27,6 +27,6 @@ Considering
 - Is there anyway to indicate that I am currently hovering over the logo?
 
 Bugs
-- navbar background does not change in the company page
+- navbar background does not change in the company page 🟢
 
 This is what I have to do today, I am excited 🍵

@@ -95,8 +95,8 @@ export const Mobilenav = ({ expand, setExpand }: Props) => {
 						<div className="nav-logo">
 							<Link href="/" className="nav-logo-link">
 								Re
+								<span style={{ color: '#fff' }}>Remote Global</span>
 							</Link>
-							<h1 style={{ color: '#fff' }}>Remote Global</h1>
 						</div>
 					</li>
 					<li>

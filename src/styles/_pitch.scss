@@ -1,0 +1,47 @@
+@use 'globals' as g;
+
+.pitch {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	align-items: center;
+	width: 90%;
+	margin: 0 auto;
+  padding-top: 120px;
+
+	&-wrapper {
+		h1 {
+			text-align: center;
+		}
+	}
+
+	&-form {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+    flex-direction: column;
+		form {
+			padding: 2rem 0;
+			display: grid;
+			gap: 1rem;
+
+			input {
+				padding: 0.5rem 1rem;
+				font-family: 'Nunito', sans-serif;
+				border: 1px solid #000;
+
+				@media screen and (min-width: 600px) {
+					padding: 0.5rem 10rem;
+				}
+			}
+
+			button {
+				@include g.button(#000, #fff, 0.8rem, 6rem, 0, #ddd);
+
+				@media screen and (min-width: 600px) {
+					padding: 0.8rem 15rem;
+				}
+			}
+		}
+	}
+}

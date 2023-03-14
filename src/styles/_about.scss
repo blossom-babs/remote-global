@@ -1,3 +1,5 @@
+@use 'globals' as g;
+
 @mixin fluidLayout {
 	width: 90%;
 	margin: 0 auto;
@@ -6,11 +8,6 @@
 }
 
 .about {
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
-	// flex-direction: column;
-
 	&-main {
 		height: 100vh;
 		text-align: center;
@@ -95,20 +92,9 @@
 			}
 
 			button {
-				padding: 0.8rem 1rem;
-				background: #fff;
-				border: 1px solid #000;
-				cursor: pointer;
-				width: 50%;
-				transition: 1s ease-in-out;
-				font-family: 'Nunito', sans-serif;
-
+				@include g.button(#000, #fff, 0.8rem, 1rem, 50%, #ddd);
 				@media screen and (min-width: 600px) {
 					padding: 0.8rem 2rem;
-				}
-
-				&:hover {
-					background: #ddd;
 				}
 			}
 		}

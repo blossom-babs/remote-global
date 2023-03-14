@@ -1,18 +1,31 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Damion&family=Nunito&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Damion&family=Nunito&family=Satisfy&display=swap');
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 html,
 body {
-  overflow-x: hidden;
-  font-family: 'Nunito', sans-serif;
+	overflow-x: hidden;
+	font-family: 'Nunito', sans-serif;
 }
 
-body{
-  min-height: 100%;
+body {
+	min-height: 100%;
+}
+
+@mixin button($borderColor, $bg, $px, $py, $width, $hoverbg) {
+	background: $bg;
+	border: 1px solid $borderColor;
+	cursor: pointer;
+	transition: 1s ease-in-out;
+	font-family: 'Nunito', sans-serif;
+	padding: $px $py;
+	width: $width;
+
+	&:hover {
+		background: $hoverbg;
+	}
 }

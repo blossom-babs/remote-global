@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import ReportIcon from '@mui/icons-material/Report';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const Waitlist = () => {

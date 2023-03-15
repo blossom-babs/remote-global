@@ -1,16 +1,11 @@
 import Layout from '@/components/Layout';
 import Waitlist from '@/components/Waitlist';
-import MultipleSelectChip from '@/components/MultiSelectComp';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
-import TableRowsIcon from '@mui/icons-material/TableRows';
-import GridViewIcon from '@mui/icons-material/GridView';
-import React from 'react';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from 'lib/prisma';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import Image from 'next/image';
 
-const prisma = new PrismaClient();
 
 /*
 1. filter by companysize, accepts open source
@@ -43,7 +38,7 @@ export default function Companies({ companies }: Companies) {
 						<div className="companies-list">
 							{companies.map((data) => (
 								<article key={data.id}>
-									<img
+									<Image
 										alt={data.companyName}
 										src={data.companyLogo}
 										width={50}
@@ -81,7 +76,11 @@ export default function Companies({ companies }: Companies) {
 }
 
 export async function getServerSideProps() {
-	const companies = await prisma.company.findMany({});
+	const companies = await prisma.company.findMany({
+		where: {
+			approved: true
+		}
+	});
 
 	return {
 		props: {

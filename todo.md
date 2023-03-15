@@ -1,5 +1,5 @@
-1. change favico
-Update readme.md with video
+1. Update readme.md with video
+2. validate form input - waitlist and pitch
 
 companies list
 - higligh on hover and on click

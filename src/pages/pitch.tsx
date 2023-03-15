@@ -2,7 +2,6 @@ import Layout from '@/components/Layout';
 import Head from 'next/head';
 import { useState } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 interface FormData {
 	companyName: string;
@@ -35,6 +34,7 @@ export default function Pitch() {
 			};
 		});
 		setError(false);
+		setSuccess(false);
 	};
 
 	const handleSubmit = async (e: { preventDefault: () => void }) => {
@@ -50,35 +50,13 @@ export default function Pitch() {
 				console.log(res);
 				setForm({ companyName: '', website: '', location: '' });
 				if (res.status === 200) setSuccess(true);
-				if (res.status === 404) {
-					setError(true);
-					setLoading(false);
-				}
+				if (res.status === 404 || res.status === 500) setError(true);
+				setLoading(false);
 			});
 		} catch (error) {
 			console.log(error);
 			if (error) setError(true);
 		}
-
-		// const formElement = document.querySelector('#form') as HTMLFormElement;
-		// const formData = new FormData(formElement);
-		// console.log(formData);
-		// fetch(process.env.NEXT_PUBLIC_FORM_URL as string, {
-		// 	method: 'POST',
-		// 	body: formData
-		// })
-		// 	.then((res) => {
-		// 		console.log(res);
-		// 		if (res.status === 200) setSuccess(true);
-		// 		if (res.status === 404) {
-		// 			setError(true);
-		// 			setLoading(false);
-		// 		}
-		// 	})
-		// 	.catch((err) => {
-		// 		console.log(err);
-		// 		if (err) setError(true);
-		// 	});
 	};
 
 	return (
@@ -94,8 +72,10 @@ export default function Pitch() {
 							Pitch them
 						</h1>
 						<div className="pitch-form">
-							{loading && <CircularProgress disableShrink color="primary" />}
 							{success && <SuccessMessage />}
+
+							{loading && <CircularProgress disableShrink color="primary" />}
+
 							<form onSubmit={handleSubmit} id="form" method="post" action="">
 								<div>
 									<input
@@ -146,12 +126,9 @@ export default function Pitch() {
 
 export const SuccessMessage = () => {
 	return (
-		<div className="about-whatWeDo-card about-success">
-			<div>
-				<CheckCircleIcon />
-			</div>
-			<h1>Success!</h1>
-			<p>Thank you for pitching. Pitch Another.</p>
+		<div className="about-whatWeDo-card pitch-success">
+			<h1 style={{ fontSize: '1rem' }}>Success!</h1>
+			<p>Thank you for pitching. Pitch Another?</p>
 		</div>
 	);
 };

@@ -20,7 +20,7 @@ export default async function handler(
 		}
 	}
 
-		if (req.method === 'DELETE') {
+	if (req.method === 'DELETE') {
 		try {
 			const company = await prisma.company.delete({
 				where: {
@@ -28,6 +28,21 @@ export default async function handler(
 				}
 			});
 			res.status(200).json(company);
+		} catch (error) {
+			res.status(500).json(error);
+		}
+	}
+
+	if (req.method === 'PUT') {
+		try {
+			const updateUser = await prisma.company.update({
+				where: {
+					id: companyId
+				},
+				data: {
+					about: 'Viola the Magnificent'
+				}
+			});
 		} catch (error) {
 			res.status(500).json(error);
 		}

@@ -103,6 +103,7 @@ export const ModalBox = (props: any) => {
 	const [company, setCompany] = useState();
 
 	const companyId = localStorage.getItem('company') as string;
+	const url = 'http://localhost:3000'
 
 	async function getNote(id: string) {
 		try {

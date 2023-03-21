@@ -3,6 +3,7 @@
 3. on prod, companies logo is not showing - unable to fetch comapnies locally now
 4. Have a spot in the admin table for counting
 
+<!-- I really do not have much to comment -->
 
 **To-write About problems I personally faced**
 

@@ -5,6 +5,12 @@
 
 <!-- I really do not have much to comment -->
 
+
+<!-- what am i working on today -->
+- a protected route
+- the ability to edit and delete a company
+- replace localhost:800 in api calls with production url
+
 **To-write About problems I personally faced**
 
 1. the <Image/> not showing the images, replace instead with img

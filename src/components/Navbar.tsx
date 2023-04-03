@@ -54,7 +54,7 @@ const Navbar = () => {
 						style={{ color: scroll ? '#fff' : '#000' }}
 						className="nav-logo-companies"
 						href="/companies">
-						List
+						Companies
 					</Link>
 				</div>
 
@@ -98,6 +98,9 @@ export const Mobilenav = ({ expand, setExpand }: Props) => {
 								<span style={{ color: '#fff' }}>Remote Global</span>
 							</Link>
 						</div>
+					</li>
+					<li>
+						<Link href="/companies">Companies</Link>
 					</li>
 					<li>
 						<Link href="/pitch">Pitch a Global Company</Link>

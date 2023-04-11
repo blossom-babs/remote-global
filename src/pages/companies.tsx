@@ -6,7 +6,6 @@ import { prisma } from 'lib/prisma';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Image from 'next/image';
 
-
 /*
 1. filter by companysize, accepts open source
 2. companies list has 2 views - grid and table
@@ -38,12 +37,20 @@ export default function Companies({ companies }: Companies) {
 						<div className="companies-list">
 							{companies.map((data) => (
 								<article key={data.id}>
-									<Image
-										alt={data.companyName}
-										src={data.companyLogo}
-										width={50}
-										height={50}
-									/>
+									<div className='companies-list-header'>
+										<Image
+											alt={data.companyName}
+											src={data.companyLogo}
+											width={50}
+											height={50}
+										/>
+										<Link
+											href={data.website}
+											target="_blank"
+											rel="noopener noreferrer">
+											<OpenInNewIcon />
+										</Link>
+									</div>
 									<div className="companies-data">
 										<h1>{data.companyName}</h1>
 										<p className="companies-data-about">{data.about}</p>
@@ -55,12 +62,6 @@ export default function Companies({ companies }: Companies) {
 
 									<div className="companies-data-footer">
 										<p>{data.location}</p>
-										<Link
-											href={data.website}
-											target="_blank"
-											rel="noopener noreferrer">
-											<OpenInNewIcon />
-										</Link>
 									</div>
 								</article>
 							))}

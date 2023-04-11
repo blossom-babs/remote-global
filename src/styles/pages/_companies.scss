@@ -78,6 +78,12 @@
 		gap: 1rem;
 		min-height: 100vh;
 
+		&-header{
+			display: flex;
+			justify-content: space-between;
+		}
+
+
 		article {
 			padding: 0.5rem 1rem;
 			background: #fff;

@@ -1,6 +1,11 @@
-@use './globals';
-@use './nav';
-@use './about';
-@use './companies';
-@use './pitch';
-@use './admin';
+// utils
+@use './utils/globals';
+
+// pages
+@use './pages/admin';
+@use './pages/companies';
+@use './pages/pitch';
+
+// components
+@use './component/about';
+@use './component/nav';

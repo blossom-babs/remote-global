@@ -25,7 +25,8 @@ $ cd remote-global
 $ npm install
 $ npm run dev
 ```
-- If you want to contribute, before any of the steps above, you would need to __fork__ this project first.
+- If you want to contribute, 
+please visit the `contribute.md` file for contribution guidelines 
 - If you notice any issues, create one in the issues tab
 
 You're ready to hack (and | or contribute) ✌️

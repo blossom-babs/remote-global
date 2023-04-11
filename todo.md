@@ -2,16 +2,15 @@
 2. validate form input - waitlist and pitch
 3. on prod, companies logo is not showing - unable to fetch comapnies locally now
 4. Have a spot in the admin table for counting
+5. redirect to contributing.md for anyone who wants to contribute to open source
+6. create a mailing list for people who signed up to the mailing list
 
-<!-- I really do not have much to comment -->
-
-
-<!-- what am i working on today -->
+<!-- BACKLOG -->
 - a protected route
 - the ability to edit and delete a company
-- 
+- unit tests in jest for components and e2e tests for pages
 
-**To-write About problems I personally faced**
+**To-write About Bugs Encountered during development**
 
 1. the <Image/> not showing the images, replace instead with img
 2. react hydration error

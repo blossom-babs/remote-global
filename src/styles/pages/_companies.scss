@@ -40,7 +40,12 @@
 		margin-bottom: 5rem;
 
 		&-about {
-			padding: 1rem 0;
+			padding: 0.5rem 0;
+		}
+
+		&-location {
+			padding-bottom: 0.5rem;
+			color: grey;
 		}
 
 		&-size {
@@ -78,21 +83,19 @@
 		gap: 1rem;
 		min-height: 100vh;
 
-		&-header{
+		&-header {
 			display: flex;
 			justify-content: space-between;
 		}
 
-
 		article {
-			padding: 0.5rem 1rem;
+			padding: 0.5rem;
 			background: #fff;
 			border-radius: 2px;
 			display: inline-block;
-			//height: 300px;
-			margin: 1rem;
+			height: 250px;
 			position: relative;
-			width: 300px;
+			width: 250px;
 			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
 				0 15px 12px rgba(0, 0, 0, 0.22);
 

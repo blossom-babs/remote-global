@@ -8,11 +8,11 @@ Please make sure you follow this guidelines so your code can be merged as quickl
 
 1. On the [GitHub page for this repository,]('https://github.com/blossom-babs/remote-global') click on the Button "Fork".
 
-![Fork repo](readme-assets/code-fork.png)
+![Fork repo](public/readme-assets/code-fork.png)
 
 2. Clone your forked project to your local computer
 
-![Clone repo](readme-assets/code-clone.png)
+![Clone repo](public/readme-assets/code-clone.png)
 
 - for example, run this command inside your terminal:
 
@@ -46,11 +46,15 @@ git add file or files
 git commit -m "descriptive message"
 ```
 
-7. Push your changes to your repository and make a pull request:
+7. Push your changes to your repository(origin)
 
 ```bash
 git push origin <branch-name>
 ```
+
+8. Create a pull request on the [GitHub page for this repository,]('https://github.com/blossom-babs/remote-global')
+
+![Clone repo](public/readme-assets/compare-code.png)
 
 ## Styles Guidelines 🎨
 

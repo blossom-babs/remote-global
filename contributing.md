@@ -46,7 +46,7 @@ git add file or files
 git commit -m "descriptive message"
 ```
 
-7. Push your changes to your repository(origin)
+7. Push your changes to your repository and make a pull request:
 
 ```bash
 git push origin <branch-name>

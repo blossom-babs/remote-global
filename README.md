@@ -18,28 +18,41 @@ A platform to display and track international companies hiring worldwide. A user
 ![Vercel](https://img.shields.io/badge/-vercel-black?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## Play with this code locally:
+
 1. You need node installed globally on your local machine
+
 ```
 $ git clone https://github.com/blossom-babs/remote-global
 $ cd remote-global
 $ npm install
 $ npm run dev
 ```
-- If you want to contribute, 
-please visit the `contribute.md` file for contribution guidelines 
+
+- If you want to contribute,
+  please visit the `contribute.md` file for contribution guidelines
 - If you notice any issues, create one in the issues tab
 
 You're ready to hack (and | or contribute) ✌️
 
 ## 🤝 Contributing
+
 Contributions, issues and feature requests are welcome!
 
 ## Authors
-🌸 __Blossom__
+
+🌸 **Blossom**
+
 - Youtube: [@trant6152](https://www.youtube.com/channel/UCWqoKQfyZTTLUd4t8yBT57g)
 - LinkedIn: [Blossom Babalola](https://www.linkedin.com/in/blossom-babalola/)
 - Twitter: [@BlossomBabalola](https://twitter.com/BabalolaBlossom)
 
+🌸 **Emmanuel Onyema**
+
+- LinkedIn: [Emmanuel Onyema](https://www.linkedin.com/in/emmanuel-c-onyema-software-frontend-engineer/)
+- Twitter: [@ceonyema\_](https://twitter.com/ceonyema_)
+- Github: [Emmnauel Onyema](https://github.com/cemmanuelonyema/)
+
 ### Show your support
+
 - Give a ⭐ if you like this project
 - [Buy me a coffee](https://www.buymeacoffee.com/blossombabs)
